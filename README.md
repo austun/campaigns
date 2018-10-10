@@ -12,16 +12,16 @@ Backend application developed with tdd approach including unit tests for all cla
 
 Front-end is developed in React.js. React's component approach makes rendering easy for complex data structure such in the given data.json file. Material-UI components used in overview and detailed presentation views.
 
-##Installation
+### Installation
 
 To install app, Docker and node should be installed beforehand. Backend and front-end repositories separated so installation will be 2 steps.
 
-###Backend
+### Backend
 Once docker is installed, only command is required to run backend app provided below.
 
 ```docker-compose -f docker-compose.yml up --build ```
 
-###Front-end
+### Front-end
 Front-end project created using [create-react-app](https://github.com/facebook/create-react-app), which provides simple way to start React projects without any external configuration.
 
 Once npm installed, below command should be run in project directory, react-app:
@@ -30,7 +30,7 @@ Once npm installed, below command should be run in project directory, react-app:
 
 This runs app in development mode and opens landing page at [http://localhost:3000](http://localhost:3000/) in browser.
 
-##Technologies used in project
+## Technologies used in project
 - Java 8
 - Spring Boot
 - Docker
@@ -42,9 +42,9 @@ This runs app in development mode and opens landing page at [http://localhost:30
 - MaterialUI
 - Axios
 
-##Features
+## Features
 
-###Overview Listing of Campaigns
+### Overview Listing of Campaigns
 In landing page users able to see overview campaign list in a table.
 
 To do this,
@@ -52,7 +52,7 @@ To do this,
 - REST service endpoint at server, accepts request and returns JSON data which stored in mongoDB.
 - Client app gets JSON objects and renders in browser.
 
-###Detailed View of Campaigns
+### Detailed View of Campaigns
 Each row has DETAILS button at the end column in table.
 When user clicks on button, a modal opens and lists all campaign details for selected campaign.
 The presentation designed as, each list item represents an inner object in JSON.
