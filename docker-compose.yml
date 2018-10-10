@@ -1,0 +1,33 @@
+version: "3.1"
+
+services:
+  campaigns:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "campaigns"
+    image: campaigns/latest
+    environment:
+    - NODE_ENV=development
+    - FOO=bar
+    volumes:
+    - .:/var/www:rw
+    - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    ports:
+    - 8080:8080
+    - 5005:5005
+    links:
+    - mongodb
+    depends_on:
+    - mongodb
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    environment:
+    - MONGO_DATA_DIR=/data/db
+    - MONGO_LOG_DIR=/dev/null
+    volumes:
+    - ./data/db:/data/db
+    ports:
+    - 27000:27017
+    command: mongod --smallfiles --logpath=/dev/null # --quiet
